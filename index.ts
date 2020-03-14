@@ -6,7 +6,7 @@ class Person {
 
   @AddGreet
   greet() {
-    return `Hello, I am ${this.name}!`; // this.name, if called out of the scope of this class, doesn't exist
+    return `Hello, I am ${this.name}!`; // this.name, if called OUTSIDE of the scope of this class, doesn't exist
   }
 }
 
@@ -16,8 +16,9 @@ function AddGreet(constructor, methodName, methodDescriptor) {
   const newMethodDescriptor = {
     configurable: methodDescriptor.configurable,
     enumerable: methodDescriptor.enumerable,
+    // value: () => `${originalMethod()} Nice to meet you!`  // this runs into scoping issues
     get() {
-      return () => `${originalMethod.bind(this)()} Nice to meet you!`;
+      return () => `${originalMethod.bind(this)()} Nice to meet you!`; // this doesn't run into scoping issues
     }
   };
   return newMethodDescriptor;
