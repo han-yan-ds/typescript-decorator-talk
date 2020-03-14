@@ -7,11 +7,14 @@ class Greeter {
 
 
 function addNameCustom(name) { // wrapping in a function: This is the Decorator-Maker (or Decorator-Factory)
-  return function (constructor, methodName, methodDesc) {
-    const originalMethod = methodDesc.value;
-    const newMethodDesc = {...methodDesc};
-    newMethodDesc.value = () => `${originalMethod()} ${name}`
-    return newMethodDesc;
+  return function (constructor, methodName, methodDescriptor) {
+    const originalMethod = methodDescriptor.value;
+    const newMethodDescriptor = {
+      configurable: methodDescriptor.configurable,
+      enumerable: methodDescriptor.enumerable,
+      value: () => `${originalMethod()} ${name}`
+    };
+    return newMethodDescriptor;
   }
 }
 
