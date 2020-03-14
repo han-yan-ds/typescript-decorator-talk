@@ -1,30 +1,24 @@
 class Greeter {
-
-  @addName
+  @addName // "Decorating a method"
   greet() {
     return 'Hello';
   }
 }
 
-// function addName(name) {
 
 function addName(constructor, methodName, methodDesc) {
+  // This is the decorator itself 
   const originalMethod = methodDesc.value;
-  const newMethodDesc = {
-    configurable: methodDesc.configurable,
-    enumerable: methodDesc.enumerable,
-    value: () => `${originalMethod()} ${name}`
-  };
+  const newMethodDesc = {...methodDesc}; // Cloning the method
+  newMethodDesc.value = () => `${originalMethod()} Bootcampers` // Replacing the old method with a new method
   return newMethodDesc;
 }
-// }
 
 
 function buttonPress() {
   const greet = new Greeter();
   return greet.greet();
 }
-
 
 
 document.getElementById('create-greeter-button')!.addEventListener("click", (e) => {
