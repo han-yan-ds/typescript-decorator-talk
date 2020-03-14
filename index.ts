@@ -1,17 +1,22 @@
-class Greeter {
+class Person {
+  name: string;
+  constructor(name) {
+    this.name = name;
+  }
+
   greet() {
-    return 'Hello';
+    return `Hello, I am ${this.name}!`;
   }
 }
 
 
 function buttonPress() {
-  const greet = new Greeter();
-  return greet.greet();
+  const josh = new Person('Josh');
+  return josh.greet();
 }
 
 
-document.getElementById('create-greeter-button')!.addEventListener("click", (e) => {
+document.getElementById('create-person-button')!.addEventListener("click", (e) => {
   e.preventDefault();
   alert(buttonPress());
 })
