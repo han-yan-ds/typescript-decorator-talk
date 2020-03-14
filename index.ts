@@ -1,17 +1,18 @@
 class Greeter {
-  @addName // "Decorating a method"
+  @addNameCustom('Josh') // "Decorating a method"
   greet() {
     return 'Hello';
   }
 }
 
 
-function addName(constructor, methodName, methodDesc) {
-  // This is the decorator itself 
-  const originalMethod = methodDesc.value;
-  const newMethodDesc = {...methodDesc}; // Cloning the method
-  newMethodDesc.value = () => `${originalMethod()} Bootcampers` // Replacing the old method with a new method
-  return newMethodDesc;
+function addNameCustom(name) { // wrapping in a function: This is the Decorator-Maker (or Decorator-Factory)
+  return function (constructor, methodName, methodDesc) {
+    const originalMethod = methodDesc.value;
+    const newMethodDesc = {...methodDesc};
+    newMethodDesc.value = () => `${originalMethod()} ${name}`
+    return newMethodDesc;
+  }
 }
 
 
