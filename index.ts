@@ -14,7 +14,7 @@ function AddIAm(myName) {
   /**
    * Exercise:  Add another decorator that appends "I am myName" to the end
    * Eg: "Hello Josh I am Andy"
-   * Hint: This will be a decorator factory (refer to branch 2DecoratorFactory)
+   * Hint: This will be a decorator factory (refer to AddNameCustom below)
    */
   return function(constructor, methodName, methodDescriptor) {
     const originalMethod = methodDescriptor.value;
