@@ -4,9 +4,18 @@ class Person {
     this.name = name;
   }
 
+  @addGreet
   greet() {
     return `Hello, I am ${this.name}!`;
   }
+}
+
+
+function addGreet(constructor, methodName, methodDescriptor) {
+  const originalMethod = methodDescriptor.value;
+  const newMethodDescriptor = {...methodDescriptor};
+  newMethodDescriptor.value = () => `${originalMethod} Nice to meet you!`;
+  return newMethodDescriptor;
 }
 
 
