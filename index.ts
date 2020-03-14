@@ -1,12 +1,12 @@
 class Greeter {
-  @addNameCustom('Josh') // "Decorating a method"
+  @AddNameCustom('Josh') // "Decorating a method"
   greet() {
     return 'Hello';
   }
 }
 
 
-function addNameCustom(name) { // wrapping in a function: This is the Decorator-Maker (or Decorator-Factory)
+function AddNameCustom(name) { // wrapping in a function: This is the Decorator-Maker (or Decorator-Factory)
   return function (constructor, methodName, methodDescriptor) {
     const originalMethod = methodDescriptor.value;
     const newMethodDescriptor = {
