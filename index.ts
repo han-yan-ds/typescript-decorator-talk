@@ -13,8 +13,13 @@ class Person {
 
 function addGreet(constructor, methodName, methodDescriptor) {
   const originalMethod = methodDescriptor.value;
-  const newMethodDescriptor = {...methodDescriptor};
-  newMethodDescriptor.value = () => `${originalMethod()} Nice to meet you!`; // this.name is undefined so "Josh doesn't show up"
+  const newMethodDescriptor = {
+    configurable: methodDescriptor.configurable,
+    enumerable: methodDescriptor.enumerable,
+    get() {
+      return () => `${originalMethod.bind(this)()} Nice to meet you!`;
+    }
+  };
   return newMethodDescriptor;
 }
 
