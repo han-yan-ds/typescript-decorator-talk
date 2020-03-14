@@ -14,7 +14,7 @@ class Person {
 function addGreet(constructor, methodName, methodDescriptor) {
   const originalMethod = methodDescriptor.value;
   const newMethodDescriptor = {...methodDescriptor};
-  newMethodDescriptor.value = () => `${originalMethod} Nice to meet you!`;
+  newMethodDescriptor.value = () => `${originalMethod()} Nice to meet you!`; // this.name is undefined so "Josh doesn't show up"
   return newMethodDescriptor;
 }
 
