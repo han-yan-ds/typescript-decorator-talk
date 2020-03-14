@@ -1,12 +1,12 @@
 class Greeter {
-  @addName // "Decorating a method"
+  @AddName // "Decorating a method"
   greet() {
     return 'Hello';
   }
 }
 
 
-function addName(constructor, methodName, methodDescriptor) {
+function AddName(constructor, methodName, methodDescriptor) {
   // This is the decorator itself 
   const originalMethod = methodDescriptor.value;
   const newMethodDescriptor = {
