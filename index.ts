@@ -6,12 +6,15 @@ class Greeter {
 }
 
 
-function addName(constructor, methodName, methodDesc) {
+function addName(constructor, methodName, methodDescriptor) {
   // This is the decorator itself 
-  const originalMethod = methodDesc.value;
-  const newMethodDesc = {...methodDesc}; // Cloning the method
-  newMethodDesc.value = () => `${originalMethod()} Bootcampers` // Replacing the old method with a new method
-  return newMethodDesc;
+  const originalMethod = methodDescriptor.value;
+  const newMethodDescriptor = {
+    configurable: methodDescriptor.configurable,
+    enumerable: methodDescriptor.enumerable,
+    value: () => `${originalMethod()} Bootcampers` // Where you modify the method
+  };
+  return newMethodDescriptor;
 }
 
 
