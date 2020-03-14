@@ -4,14 +4,14 @@ class Person {
     this.name = name;
   }
 
-  @addGreet
+  @AddGreet
   greet() {
     return `Hello, I am ${this.name}!`; // this.name, if called out of the scope of this class, doesn't exist
   }
 }
 
 
-function addGreet(constructor, methodName, methodDescriptor) {
+function AddGreet(constructor, methodName, methodDescriptor) {
   const originalMethod = methodDescriptor.value;
   const newMethodDescriptor = {
     configurable: methodDescriptor.configurable,
