@@ -24,6 +24,16 @@ Do this only after forking!!!
 git clone <repoUrl>
 ```
 
+##### Clone all branches
+This is because we will USE those branches!!
+```
+git checkout -b 0Setup origin/0Setup
+git checkout -b 1DecoratorIntro origin/1DecoratorIntro
+git checkout -b 2DecoratorFactory origin/2DecoratorFactory
+git checkout -b 3MultipleDecoratorExercise origin/3MultipleDecoratorExercise
+git checkout -b 4MultipleDecoratorSolution origin/4MultipleDecoratorSolution
+git checkout -b 5GetterInDecorator origin/5GetterInDecorator
+```
 
 #### Start this application
 Navigate to this directory and run the TypeScript compiler.
