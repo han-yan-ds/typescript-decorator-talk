@@ -13,6 +13,7 @@ function AddName(constructor, methodName, methodDescriptor) {
     configurable: methodDescriptor.configurable,
     enumerable: methodDescriptor.enumerable,
     value: () => `${originalMethod()} Bootcampers` // Where you modify the method
+    // value: () => methodDescriptor.value
   };
   return newMethodDescriptor;
 }
