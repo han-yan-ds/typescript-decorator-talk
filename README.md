@@ -22,7 +22,7 @@ mkdir ~/git
 Do this only after forking!!!
 ```
 git clone <repoUrl>
-cd ~/git
+cd ~/git/typescript-decorator-talk
 ```
 
 ##### Clone all branches
