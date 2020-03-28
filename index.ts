@@ -19,9 +19,6 @@ function AddGreet(constructor, methodName, methodDescriptor) {
     value: function() {
       return `${originalMethod.bind(this)()} Nice to meet you!`;
     }
-    // get() {
-    //   return () => `${originalMethod.bind(this)()} Nice to meet you!`;
-    // }
   };
   return newMethodDescriptor;
 }
