@@ -75,8 +75,11 @@ git checkout <branchName>
 - **4MultipleDecoratorSolution**
   - Multiple Decorators and Order of operations
 
-- **5GetterInDecorator**
-  - An issue with Scope (again!)
+- **5MakingItInteractive**
+  - Interactive = Fun
+
+- **6Getters
+  - Extra addendum
 
 
 # 3. I Want Answers!

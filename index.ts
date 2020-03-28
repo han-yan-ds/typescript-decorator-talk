@@ -28,8 +28,8 @@ function AddGreet(constructor, methodName, methodDescriptor) {
 
 
 function buttonPress(name) {
-  const josh = new Person(name);
-  return josh.greet();
+  const person = new Person(name);
+  return person.greet();
 }
 
 
