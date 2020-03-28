@@ -33,7 +33,8 @@ git checkout -b 1DecoratorIntro origin/1DecoratorIntro
 git checkout -b 2DecoratorFactory origin/2DecoratorFactory
 git checkout -b 3MultipleDecoratorExercise origin/3MultipleDecoratorExercise
 git checkout -b 4MultipleDecoratorSolution origin/4MultipleDecoratorSolution
-git checkout -b 5GetterInDecorator origin/5GetterInDecorator
+git checkout -b 5MakingItInteractive origin/5MakingItInteractive
+git checkout -b 6Getters origin/6Getters
 ```
 
 #### Start this application
@@ -75,8 +76,11 @@ git checkout <branchName>
 - **4MultipleDecoratorSolution**
   - Multiple Decorators and Order of operations
 
-- **5GetterInDecorator**
-  - An issue with Scope (again!)
+- **5MakingItInteractive**
+  - Interactive = Fun
+
+- **6Getters**
+  - Extra addendum
 
 
 # 3. I Want Answers!
