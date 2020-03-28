@@ -16,22 +16,25 @@ function AddGreet(constructor, methodName, methodDescriptor) {
   const newMethodDescriptor = {
     configurable: methodDescriptor.configurable,
     enumerable: methodDescriptor.enumerable,
-    // value: () => `${originalMethod()} Nice to meet you!`  // this runs into scoping issues
-    get() {
-      return () => `${originalMethod.bind(this)()} Nice to meet you!`; // this doesn't run into scoping issues
+    value: function() {
+      return `${originalMethod.bind(this)()} Nice to meet you!`;
     }
+    // get() {
+    //   return () => `${originalMethod.bind(this)()} Nice to meet you!`;
+    // }
   };
   return newMethodDescriptor;
 }
 
 
-function buttonPress() {
-  const josh = new Person('Josh');
+function buttonPress(name) {
+  const josh = new Person(name);
   return josh.greet();
 }
 
 
 document.getElementById('create-person-button')!.addEventListener("click", (e) => {
   e.preventDefault();
-  alert(buttonPress());
+  let name = (document.getElementById("person-name") as HTMLInputElement).value;
+  alert(buttonPress(name));
 })
