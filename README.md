@@ -18,10 +18,11 @@ Navigate to the folder that you want to save this repository.  If you don't have
 mkdir ~/git
 ```
 
-#### Clone this repository
+#### Clone this repository and navigate into this directory
 Do this only after forking!!!
 ```
 git clone <repoUrl>
+cd ~/git/typescript-decorator-talk
 ```
 
 ##### Clone all branches
@@ -36,10 +37,7 @@ git checkout -b 5GetterInDecorator origin/5GetterInDecorator
 ```
 
 #### Start this application
-Navigate to this directory and run the TypeScript compiler.
-```
-cd ~/git
-```
+Run the TypeScript compiler.
 
 TypeScript compiles into regular JavaScript.  But to have it "Hot-Compile" (re-compile upon saving changes), use the `--watch` flag when you're in the project folder.
 ```
